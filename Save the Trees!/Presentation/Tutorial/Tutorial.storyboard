@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="68C-S3-abA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tutorial View Controller-->
+        <scene sceneID="Y01-II-iEB">
+            <objects>
+                <viewController id="68C-S3-abA" customClass="TutorialViewController" customModule="Save_the_Trees_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Krw-K0-ZKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundTexture-1" translatesAutoresizingMaskIntoConstraints="NO" id="kDW-qL-bcg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD9-62-Ide">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="68C-S3-abA" id="2Ww-fl-gWR"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu8-GP-4EJ">
+                                <rect key="frame" x="280" y="572" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zu8-GP-4EJ" secondAttribute="height" multiplier="1:1" id="yWH-8M-aQZ"/>
+                                </constraints>
+                                <state key="normal" image="botão next"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="68C-S3-abA" eventType="touchUpInside" id="q9Z-nd-yhg"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="X8H-Rj-CGF">
+                                <rect key="frame" x="168" y="591" width="39" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9H-kE-WdX">
+                                <rect key="frame" x="20" y="572" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k9H-kE-WdX" secondAttribute="height" multiplier="1:1" id="DbI-s1-gLh"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="botão back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="68C-S3-abA" eventType="touchUpInside" id="8I1-oe-eMA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-yr-BED">
+                                <rect key="frame" x="280" y="572" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Pg-yr-BED" secondAttribute="height" multiplier="1:1" id="6pt-x3-kH2"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <segue destination="Ihw-W7-VKE" kind="show" id="NO4-Qk-Bye"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.57647058823529407" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JQb-4e-soJ" firstAttribute="bottom" secondItem="kDW-qL-bcg" secondAttribute="bottom" id="4Ss-Ym-pLn"/>
+                            <constraint firstItem="JQb-4e-soJ" firstAttribute="bottom" secondItem="LD9-62-Ide" secondAttribute="bottom" id="5NV-Fr-9Em"/>
+                            <constraint firstItem="LD9-62-Ide" firstAttribute="height" secondItem="Krw-K0-ZKJ" secondAttribute="height" id="CNS-pg-LlW"/>
+                            <constraint firstItem="0Pg-yr-BED" firstAttribute="centerX" secondItem="zu8-GP-4EJ" secondAttribute="centerX" id="Dqi-Po-7D6"/>
+                            <constraint firstItem="k9H-kE-WdX" firstAttribute="leading" secondItem="JQb-4e-soJ" secondAttribute="leading" constant="20" id="GdK-yA-snN"/>
+                            <constraint firstItem="X8H-Rj-CGF" firstAttribute="centerX" secondItem="JQb-4e-soJ" secondAttribute="centerX" id="KNY-Ms-NKI"/>
+                            <constraint firstItem="k9H-kE-WdX" firstAttribute="centerY" secondItem="zu8-GP-4EJ" secondAttribute="centerY" id="KVD-8N-5XS"/>
+                            <constraint firstItem="JQb-4e-soJ" firstAttribute="bottom" secondItem="zu8-GP-4EJ" secondAttribute="bottom" constant="20" id="TTh-od-bgS"/>
+                            <constraint firstItem="JQb-4e-soJ" firstAttribute="trailing" secondItem="zu8-GP-4EJ" secondAttribute="trailing" constant="20" id="WYe-TX-9XC"/>
+                            <constraint firstItem="0Pg-yr-BED" firstAttribute="centerY" secondItem="zu8-GP-4EJ" secondAttribute="centerY" id="Y6D-Df-85y"/>
+                            <constraint firstItem="JQb-4e-soJ" firstAttribute="trailing" secondItem="LD9-62-Ide" secondAttribute="trailing" id="adA-yL-x0M"/>
+                            <constraint firstItem="kDW-qL-bcg" firstAttribute="top" secondItem="Krw-K0-ZKJ" secondAttribute="top" id="cUR-Vq-Lc2"/>
+                            <constraint firstItem="kDW-qL-bcg" firstAttribute="leading" secondItem="JQb-4e-soJ" secondAttribute="leading" id="dn9-p2-cww"/>
+                            <constraint firstItem="0Pg-yr-BED" firstAttribute="width" secondItem="k9H-kE-WdX" secondAttribute="width" id="ewl-Od-Dfv"/>
+                            <constraint firstItem="k9H-kE-WdX" firstAttribute="width" secondItem="zu8-GP-4EJ" secondAttribute="width" id="ffs-pX-nx7"/>
+                            <constraint firstItem="LD9-62-Ide" firstAttribute="leading" secondItem="JQb-4e-soJ" secondAttribute="leading" id="ftU-ch-E3D"/>
+                            <constraint firstItem="zu8-GP-4EJ" firstAttribute="width" secondItem="Krw-K0-ZKJ" secondAttribute="width" multiplier="0.2" id="jXo-pc-iQF"/>
+                            <constraint firstItem="X8H-Rj-CGF" firstAttribute="centerY" secondItem="zu8-GP-4EJ" secondAttribute="centerY" id="nIU-IZ-0py"/>
+                            <constraint firstItem="JQb-4e-soJ" firstAttribute="trailing" secondItem="kDW-qL-bcg" secondAttribute="trailing" id="nr9-fn-pbX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JQb-4e-soJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="k9H-kE-WdX" id="VoB-EX-wJ0"/>
+                        <outlet property="backgroundView" destination="Krw-K0-ZKJ" id="Re9-Qb-wbE"/>
+                        <outlet property="nextButton" destination="zu8-GP-4EJ" id="pkp-bZ-3or"/>
+                        <outlet property="pageControl" destination="X8H-Rj-CGF" id="OdH-2H-flp"/>
+                        <outlet property="playButton" destination="0Pg-yr-BED" id="zaJ-Kh-3IX"/>
+                        <outlet property="scrollView" destination="LD9-62-Ide" id="7HD-g9-zlr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fC1-N5-GIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-337" y="172"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="hx8-eA-3dA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" id="Ihw-W7-VKE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVF-mg-J4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="458" y="157"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundTexture-1" width="227" height="227"/>
+        <image name="botão back" width="123" height="123"/>
+        <image name="botão next" width="123" height="123"/>
+        <image name="play" width="253" height="253"/>
+    </resources>
+</document>

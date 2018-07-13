@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Save the Trees!
+
+  Created by Leonardo Alves de Melo on 05/06/18.
+  Copyright © 2018 Leonardo Alves de Melo. All rights reserved.
+*/
+
+"Every minute " = "A cada minuto ";
+"2000 trees " = "2000 árvores ";
+"are deforested in the Amazon Forest" = "são desmatadas na Floresta Amazônica";
+"Now you have the " = "Mas agora você tem o ";
+"magical power " = "poder mágico ";
+"to make the difference" = "para fazer a diferença";
+"Tap twice to make the " = "Clique duas para fazer o ";
+"fire or chainsaw" = "fogo ou a serra";
+" disappear" = " desaparecer";
+"You have " = "Você tem ";
+"one minute\nGood luck!" = "um minuto\nBoa sorte!";
+
+"Time is Up!" = "Acabou!";
+
+"Even with your magical power, you let " = "Mesmo com seus poderes mágicos, você deixou ";
+"all the trees die!" = "todas as árvores morrerem!";
+"Even with your magical power, you saved " = "Mesmo com seus poderes mágicos, você salvou ";
+"only %d% "
+

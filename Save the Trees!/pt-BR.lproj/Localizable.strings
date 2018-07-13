@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  Save the Trees!
+
+  Created by Leonardo Alves de Melo on 05/06/18.
+  Copyright © 2018 Leonardo Alves de Melo. All rights reserved.
+*/
+
+"Every minute " = "A cada minuto ";
+"2000 trees " = "2000 árvores ";
+"are deforested in the Amazon Forest" = "são desmatadas na Floresta Amazônica";
+"Now you have the " = "Mas agora você tem o ";
+"magical power " = "poder mágico ";
+"to make the difference" = "para fazer a diferença";
+"Tap twice to make the " = "Clique duas vezes para fazer o ";
+"fire or chainsaw" = "fogo ou a serra";
+" disappear" = " desaparecer";
+"You have " = "Você tem ";
+"one minute\nGood luck!" = "um minuto\nBoa sorte!";
+
+"Time is Up!" = "Acabou!";
+
+"Even with your magical power, you let " = "Mesmo com seus poderes mágicos, você deixou ";
+"all the trees die!" = "todas as árvores morrerem!";
+"Even with your magical power, you saved " = "Mesmo com seus poderes mágicos, você salvou ";
+"only " = "apenas ";
+"of the forest" = "floresta";
+"Congratulations! You saved " = "Parabéns! Você salvou ";
+"of the forest!" = "da floresta!";
+"Sadly, in real world " = "Infelizmente, no mundo real ";
+"nobody " = "ninguém ";
+"has this kind of power" = "tem esse tipo de poder";
+"Perhaps, there are some actions " = "Porém, há algumas ações que ";
+"you could do " = "você poderia fazer ";
+"in the real world to save " = "no mundo real para salvar ";
+"even more trees" = "ainda mais árvores";
+"Support these NGOs:\n\n" = "Apoie essas ONGs:\n\n";
+"WWF ensures the delivery of innovative solutions that meet the needs of both people and nature.\n" = "Cria inovações que garantem tanto necessidades das pessoas quanto da natureza.\n";
+"SOS Amazônia helps to create public policies for environmental protection and awareness in Amazon rainforest.\n" = "Ajuda a criar políticas públicas para proteção ambiental e conscientização na Amazônia.\n";
+"Imazon mission's is to promote sustainable development in the Amazon through studies, support for public policy formulation, broad dissemination of information and capacity building.\n" = "Promove o desenvolvimento sustentável na Amazônia por meio de estudos, formulação de políticas públicas, disseminação de informações e formação profissional.\n";
+" seconds" = " segundos";
+
+
+

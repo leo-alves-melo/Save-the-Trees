@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Save the Trees!/Presentation/Tutorial/Tutorial.swift"
+            timestampString = "552423934.162272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Save the Trees!/Presentation/Tutorial/Tutorial.swift"
+            timestampString = "552423934.163002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "rotateView(targetView:duration:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Save_the_Trees_.TutorialViewController.(rotateView in _C4F80C9C40ED79202D812DBFEF9E2D97)(targetView: __ObjC.UIView, duration: Swift.Double) -&gt; ()"
+                  moduleName = "Save the Trees!"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardoalvesdemelo/Dropbox%20(BEPiD)/wwdc2018/Save%20the%20Trees!/Save%20the%20Trees!/Presentation/Tutorial/Tutorial.swift"
+                  timestampString = "543350167.516812"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Save_the_Trees_.TutorialViewController.(rotateView in _C4F80C9C40ED79202D812DBFEF9E2D97)(targetView: __ObjC.UIView, duration: Swift.Double) -&gt; ()"
+                  moduleName = "Save the Trees!"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardoalvesdemelo/Dropbox%20(BEPiD)/wwdc2018/Save%20the%20Trees!/Save%20the%20Trees!/Presentation/Tutorial/Tutorial.swift"
+                  timestampString = "543350167.519406"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

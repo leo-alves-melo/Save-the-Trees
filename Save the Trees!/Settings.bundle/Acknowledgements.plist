@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>FooterText</key>
+            <string>Icons made by Vectors Market from Flaticon are licensed by Creative Commons BY 3.0
+                
+            Icons made by Freepik from Flaticon are licensed by Creative Commons BY 3.0
+                
+            Icons made by Smashicons from Flaticon are licensed by Creative Commons BY 3.0
+                
+            Icons made by Zlatko Najdenovski from Flaticon are licensed by Creative Commons BY 3.0
+
+</string>
+			<key>Title</key>
+			<string>LICENSE</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Acknowledgements</string>
+</dict>
+</plist>
