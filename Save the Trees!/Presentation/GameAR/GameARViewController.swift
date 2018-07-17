@@ -31,6 +31,13 @@ class GameARViewController: UIViewController {
         sceneView.showsStatistics = true
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
+        self.sceneView.scene = SCNScene(named: "art.scnassets/game.scn")!
+        self.sceneView.scene.rootNode.isHidden = true
+        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
 //    @objc
@@ -40,24 +47,53 @@ class GameARViewController: UIViewController {
 //    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesBegan")
         guard let location = touches.first?.location(in: sceneView) else { return }
         
-        let hitResultsFeaturePoints: [ARHitTestResult] = sceneView.hitTest(location, types: .featurePoint)
+        let hitResultsPlanes: [ARHitTestResult] = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
         
-        if let hit = hitResultsFeaturePoints.first {
+        let hitNodes = sceneView.hitTest(location, options: nil)
+        
+        if let hitNode = hitNodes.first {
+            print("node: \(hitNode.node.name)") // pyramid
+            
+            print("node: \(hitNode.node.parent?.name)") // tree
+            
+            print("node: \(hitNode.node.parent?.parent?.name)") // reference node
+        }
+        
+        if let hit = hitResultsPlanes.first {
+            
+            
+            
             let finalTransform = hit.worldTransform
             
             let pointTranslation = finalTransform.translation
             
-            sceneView.hitTest(location, types: .featurePoint)
+//            sceneView.hitTest(location, types: .featurePoint)
             
-            guard let scene = SCNScene(named: "art.scnassets/game.scn") else {
-                //return nil
-                return
+            if let nodeHitted = sceneView.hitTest(location, options: nil).first {
+                
+                
+                //nodeHitted.node.removeFromParentNode()
+
+                print("node: \(nodeHitted.node.name)")
+                
+                print("node: \(nodeHitted.node.parent?.name)")
+
             }
-            let node = scene.rootNode.childNode(withName: "tree01 reference", recursively: true)!
-            node.position = SCNVector3(pointTranslation.x, pointTranslation.y, pointTranslation.z)
-            sceneView.scene.rootNode.addChildNode(node)
+            
+//            else {
+//                guard let scene = SCNScene(named: "art.scnassets/game.scn") else {
+//                    //return nil
+//                    return
+//                }
+//                let node = scene.rootNode.childNode(withName: "tree01 reference", recursively: true)!
+//                node.position = SCNVector3(pointTranslation.x, pointTranslation.y, pointTranslation.z)
+//                sceneView.scene.rootNode.addChildNode(node)
+//            }
+            
+            
             
         }
         
@@ -105,7 +141,62 @@ class GameARViewController: UIViewController {
 }
 
 extension GameARViewController: ARSCNViewDelegate {
-    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if anchor is ARPlaneAnchor {
+            
+            let planeAnchor = anchor as! ARPlaneAnchor
+            
+            let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+            
+            let planeNode = SCNNode()
+            
+            planeNode.position = SCNVector3(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
+            
+            planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
+            
+            let gridMaterial = SCNMaterial()
+            
+            gridMaterial.diffuse.contents = UIImage(named: "art.scnassets/grid.png")
+            
+            plane.materials = [gridMaterial]
+            
+            planeNode.geometry = plane
+            
+            node.addChildNode(planeNode)
+            
+            //sceneView.scene.rootNode.runAction(SCNAction.move(by: SCNVector3(x: planeAnchor.center.x, y: planeAnchor.center.y, z: planeAnchor.center.z), duration: 3))
+            
+//            for rootNode in self.sceneView.scene.rootNode.childNodes {
+//
+//                if rootNode.name != nil {
+//                    rootNode.runAction(SCNAction.move(to: SCNVector3(x: planeAnchor.center.x, y: planeAnchor.center.y, z: planeAnchor.center.z), duration: 3.0))
+//                }
+//
+//            }
+            
+
+            
+            
+            //self.sceneView.scene.rootNode.simdTransform = anchor.transform
+//            self.sceneView.scene.rootNode.isHidden = false
+            
+            //self.sceneView.scene.rootNode.position = SCNVector3(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
+            
+            self.sceneView.scene.rootNode.isHidden = false
+            
+//            guard let scene = SCNScene(named: "art.scnassets/game.scn") else {
+//                //return nil
+//                return
+//            }
+//            let node = scene.rootNode.childNode(withName: "tree01 reference", recursively: true)!
+//
+//            node.simdTransform = anchor.transform
+//            //node.position = SCNVector3(planeAnchor.center.x, 0, planeAnchor.center.z)
+//            //node.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
+//            sceneView.scene.rootNode.addChildNode(node)
+            
+        }
+    }
 }
 
 extension float4x4 {

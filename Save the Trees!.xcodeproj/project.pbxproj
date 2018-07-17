@@ -154,6 +154,7 @@
 		8B10D6B4205AEB6F00F9F009 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B45275B20FD0A290066FCA4 /* ModelAR */,
 				8BA07A2120692584005E3119 /* Chainsaw.swift */,
 				8BA07A2220692584005E3119 /* Constants.swift */,
 				8BA07A2320692584005E3119 /* Danger.swift */,
@@ -171,6 +172,13 @@
 				8B20791320F913FF009809E2 /* GameARScene.swift */,
 			);
 			path = GameAR;
+			sourceTree = "<group>";
+		};
+		8B45275B20FD0A290066FCA4 /* ModelAR */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelAR;
 			sourceTree = "<group>";
 		};
 		8B52C1D020A0838A00A38138 /* Licences */ = {
