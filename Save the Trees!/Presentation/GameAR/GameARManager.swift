@@ -15,7 +15,8 @@ protocol GameARManagerDelegate {
     func gameDidEnd(score: Int)
 }
 
-class GameARManager {
+
+class GameARManager: NSObject {
     
     private weak var delegate: GameARManagerDelegate?
     private var cloud: SCNNode!
@@ -23,12 +24,18 @@ class GameARManager {
     private let boardWidth = 8
     private let boardHeight = 8
     private var treesBoard: GameBoard<SCNNode?>!
+    var timer = Timer()
     
     init(delegate: GameARManagerDelegate) {
+        
+        super.init()
         self.delegate = delegate
         
         self.instantiateTrees()
         self.createCloud()
+        self.createInvisiBall()
+        
+        self.delegate?.sceneView.scene.physicsWorld.contactDelegate = self
     
     }
     
@@ -64,11 +71,14 @@ class GameARManager {
     }
     
     func didTapIn(node: SCNNode?) {
-        self.startRain()
+        //self.startRain()
+        //self.addInvisiBallToCloud()
+        self.startAddingInvisiBallToCloud()
     }
     
     func didEndTap() {
-        self.stopRain()
+        //self.stopRain()
+        self.stopAddingInvisiBallToCloud()
     }
     
     private func instantiateTrees() {
@@ -112,7 +122,26 @@ class GameARManager {
         }
         self.invisiBall = scene.rootNode.childNode(withName: "invisiBall", recursively: true)!
         
-        cloud.addChildNode(ball)
+    }
+    
+    private func startAddingInvisiBallToCloud() {
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.addInvisiBallToCloud), userInfo: nil, repeats: true)
+        
+    }
+    
+    private func stopAddingInvisiBallToCloud() {
+        self.timer.invalidate()
+    }
+    
+    @objc private func addInvisiBallToCloud() {
+        
+        if self.invisiBall.parent != nil {
+            self.invisiBall.removeFromParentNode()
+            self.createInvisiBall()
+        }
+        
+        self.cloud.addChildNode(self.invisiBall)
     }
     
     private func addFire(node: SCNNode) {
@@ -121,4 +150,10 @@ class GameARManager {
         node.addParticleSystem(fireParticle)
     }
     
+}
+
+extension GameARManager: SCNPhysicsContactDelegate {
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        print("BATEU -------------")
+    }
 }
