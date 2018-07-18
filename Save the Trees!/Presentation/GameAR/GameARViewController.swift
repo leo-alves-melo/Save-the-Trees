@@ -13,91 +13,46 @@ class GameARViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
+    var savedTreesPercentage = 0
+    
+    var gameARManager: GameARManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(GameARViewController.handleTap(gestureRecognize:)))
-        
-        //self.view.addGestureRecognizer(tapGesture)
-        
-        
-        
-        
-        //let scene = SCNScene(named: "art.scnassets/game.scn")!
-        
-        // Set the scene to the view
-        //sceneView.scene = scene
-        
-        sceneView.showsStatistics = true
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
-        
-        self.sceneView.scene = SCNScene(named: "art.scnassets/game.scn")!
-        self.sceneView.scene.rootNode.isHidden = true
-        
+        self.gameARManager = GameARManager(delegate: self)
+   
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-//    @objc
-//    func handleTap(gestureRecognize:UITapGestureRecognizer) {
-//
-//
-//    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.gameARManager.didEndTap()
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesBegan")
+        
+
         guard let location = touches.first?.location(in: sceneView) else { return }
         
         let hitResultsPlanes: [ARHitTestResult] = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
         
         let hitNodes = sceneView.hitTest(location, options: nil)
         
+        self.gameARManager.didTapIn(node: hitNodes.first?.node)
+        
         if let hitNode = hitNodes.first {
+            //self.gameARManager.didTapIn(node: hitNode.node)
             print("node: \(hitNode.node.name)") // pyramid
             
             print("node: \(hitNode.node.parent?.name)") // tree
             
             print("node: \(hitNode.node.parent?.parent?.name)") // reference node
+            
+            //self.addFire(node: hitNode.node.parent!)
         }
-        
-        if let hit = hitResultsPlanes.first {
-            
-            
-            
-            let finalTransform = hit.worldTransform
-            
-            let pointTranslation = finalTransform.translation
-            
-//            sceneView.hitTest(location, types: .featurePoint)
-            
-            if let nodeHitted = sceneView.hitTest(location, options: nil).first {
-                
-                
-                //nodeHitted.node.removeFromParentNode()
-
-                print("node: \(nodeHitted.node.name)")
-                
-                print("node: \(nodeHitted.node.parent?.name)")
-
-            }
-            
-//            else {
-//                guard let scene = SCNScene(named: "art.scnassets/game.scn") else {
-//                    //return nil
-//                    return
-//                }
-//                let node = scene.rootNode.childNode(withName: "tree01 reference", recursively: true)!
-//                node.position = SCNVector3(pointTranslation.x, pointTranslation.y, pointTranslation.z)
-//                sceneView.scene.rootNode.addChildNode(node)
-//            }
-            
-            
-            
-        }
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -129,7 +84,16 @@ class GameARViewController: UIViewController {
         sceneView.session.pause()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segue = segue.destination as? FinalizationViewController {
+            segue.savedTreesPercentage = self.savedTreesPercentage
+        }
+    }
+    
     func startNewSession() {
+        
+        sceneView.showsStatistics = true
+        //sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
         // Create a session configuration with horizontal plane detection
         let configuration = ARWorldTrackingConfiguration()
@@ -142,66 +106,17 @@ class GameARViewController: UIViewController {
 
 extension GameARViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if anchor is ARPlaneAnchor {
+        if let anchor = anchor as? ARPlaneAnchor {
             
-            let planeAnchor = anchor as! ARPlaneAnchor
-            
-            let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
-            
-            let planeNode = SCNNode()
-            
-            planeNode.position = SCNVector3(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
-            
-            planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
-            
-            let gridMaterial = SCNMaterial()
-            
-            gridMaterial.diffuse.contents = UIImage(named: "art.scnassets/grid.png")
-            
-            plane.materials = [gridMaterial]
-            
-            planeNode.geometry = plane
-            
-            node.addChildNode(planeNode)
-            
-            //sceneView.scene.rootNode.runAction(SCNAction.move(by: SCNVector3(x: planeAnchor.center.x, y: planeAnchor.center.y, z: planeAnchor.center.z), duration: 3))
-            
-//            for rootNode in self.sceneView.scene.rootNode.childNodes {
-//
-//                if rootNode.name != nil {
-//                    rootNode.runAction(SCNAction.move(to: SCNVector3(x: planeAnchor.center.x, y: planeAnchor.center.y, z: planeAnchor.center.z), duration: 3.0))
-//                }
-//
-//            }
-            
-
-            
-            
-            //self.sceneView.scene.rootNode.simdTransform = anchor.transform
-//            self.sceneView.scene.rootNode.isHidden = false
-            
-            //self.sceneView.scene.rootNode.position = SCNVector3(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
-            
-            self.sceneView.scene.rootNode.isHidden = false
-            
-//            guard let scene = SCNScene(named: "art.scnassets/game.scn") else {
-//                //return nil
-//                return
-//            }
-//            let node = scene.rootNode.childNode(withName: "tree01 reference", recursively: true)!
-//
-//            node.simdTransform = anchor.transform
-//            //node.position = SCNVector3(planeAnchor.center.x, 0, planeAnchor.center.z)
-//            //node.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
-//            sceneView.scene.rootNode.addChildNode(node)
+            self.gameARManager.putGameIn(anchor: anchor)
             
         }
     }
 }
 
-extension float4x4 {
-    var translation: float3 {
-        let translation = self.columns.3
-        return float3(translation.x, translation.y, translation.z)
+extension GameARViewController: GameARManagerDelegate {
+    func gameDidEnd(score: Int) {
+        self.savedTreesPercentage = score
+        self.performSegue(withIdentifier: "Finalization", sender: nil)
     }
 }

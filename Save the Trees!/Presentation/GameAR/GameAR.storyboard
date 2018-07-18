@@ -35,11 +35,20 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="ATv-yc-yUY" id="bO5-O5-Aft"/>
+                        <segue destination="oUx-WQ-aB9" kind="show" identifier="Finalization" id="t6Z-0x-u86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19m-Z7-FDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-84" y="124"/>
+        </scene>
+        <!--Finalization-->
+        <scene sceneID="lRl-Cj-nSm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Finalization" id="oUx-WQ-aB9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H4J-R0-YxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511" y="112"/>
         </scene>
     </scenes>
 </document>

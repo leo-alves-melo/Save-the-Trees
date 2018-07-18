@@ -22,6 +22,10 @@
 		8B20791020F90719009809E2 /* GameARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20790F20F90719009809E2 /* GameARViewController.swift */; };
 		8B20791220F913B0009809E2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B20791120F913B0009809E2 /* art.scnassets */; };
 		8B20791420F913FF009809E2 /* GameARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20791320F913FF009809E2 /* GameARScene.swift */; };
+		8B45275E20FE5E970066FCA4 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B45275C20FE5E960066FCA4 /* spark.png */; };
+		8B45275F20FE5E970066FCA4 /* FireParticle.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 8B45275D20FE5E960066FCA4 /* FireParticle.scnp */; };
+		8B45276120FE66540066FCA4 /* RainParticle.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 8B45276020FE66540066FCA4 /* RainParticle.scnp */; };
+		8B45276320FF86580066FCA4 /* GameARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B45276220FF86570066FCA4 /* GameARManager.swift */; };
 		8B52C1D220A083A700A38138 /* LICENSE.license in Resources */ = {isa = PBXBuildFile; fileRef = 8B52C1D120A083A700A38138 /* LICENSE.license */; };
 		8B52C1D420A085F200A38138 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B52C1D320A085F100A38138 /* Settings.bundle */; };
 		8B749ECF20C6FF7E00B13A42 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B749ED120C6FF7E00B13A42 /* Localizable.strings */; };
@@ -52,6 +56,10 @@
 		8B20790F20F90719009809E2 /* GameARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameARViewController.swift; sourceTree = "<group>"; };
 		8B20791120F913B0009809E2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8B20791320F913FF009809E2 /* GameARScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameARScene.swift; sourceTree = "<group>"; };
+		8B45275C20FE5E960066FCA4 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		8B45275D20FE5E960066FCA4 /* FireParticle.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = FireParticle.scnp; sourceTree = "<group>"; };
+		8B45276020FE66540066FCA4 /* RainParticle.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = RainParticle.scnp; sourceTree = "<group>"; };
+		8B45276220FF86570066FCA4 /* GameARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameARManager.swift; sourceTree = "<group>"; };
 		8B52C1D120A083A700A38138 /* LICENSE.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.license; sourceTree = "<group>"; };
 		8B52C1D320A085F100A38138 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8B749ECE20C6FF3500B13A42 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 				8B20790D20F90694009809E2 /* GameAR.storyboard */,
 				8B20790F20F90719009809E2 /* GameARViewController.swift */,
 				8B20791320F913FF009809E2 /* GameARScene.swift */,
+				8B45276220FF86570066FCA4 /* GameARManager.swift */,
 			);
 			path = GameAR;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 		8B45275B20FD0A290066FCA4 /* ModelAR */ = {
 			isa = PBXGroup;
 			children = (
+				8B45275C20FE5E960066FCA4 /* spark.png */,
+				8B45275D20FE5E960066FCA4 /* FireParticle.scnp */,
+				8B45276020FE66540066FCA4 /* RainParticle.scnp */,
 			);
 			path = ModelAR;
 			sourceTree = "<group>";
@@ -249,12 +261,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B10D69F205ACD1D00F9F009 /* LaunchScreen.storyboard in Resources */,
+				8B45275F20FE5E970066FCA4 /* FireParticle.scnp in Resources */,
+				8B45275E20FE5E970066FCA4 /* spark.png in Resources */,
 				8B20791220F913B0009809E2 /* art.scnassets in Resources */,
 				8B10D6BE205AF32D00F9F009 /* Game.storyboard in Resources */,
 				8B10D6AF205AE70900F9F009 /* Finalization.storyboard in Resources */,
 				8B52C1D220A083A700A38138 /* LICENSE.license in Resources */,
 				8B10D6A9205ACD4200F9F009 /* Tutorial.storyboard in Resources */,
 				8B20790E20F90694009809E2 /* GameAR.storyboard in Resources */,
+				8B45276120FE66540066FCA4 /* RainParticle.scnp in Resources */,
 				8B749ECF20C6FF7E00B13A42 /* Localizable.strings in Resources */,
 				8B10D6C0205AF4E600F9F009 /* Assets.xcassets in Resources */,
 				8B7E0FCC20D01E6C00382115 /* InfoPlist.strings in Resources */,
@@ -280,6 +295,7 @@
 				8BA07A2A20692585005E3119 /* Flame.swift in Sources */,
 				8B20791420F913FF009809E2 /* GameARScene.swift in Sources */,
 				8BA07A2920692585005E3119 /* DirectionEnum.swift in Sources */,
+				8B45276320FF86580066FCA4 /* GameARManager.swift in Sources */,
 				8B10D6BC205AF25F00F9F009 /* GameScene.swift in Sources */,
 				8B10D695205ACD1D00F9F009 /* AppDelegate.swift in Sources */,
 				8BA07A2620692585005E3119 /* Chainsaw.swift in Sources */,
