@@ -32,24 +32,13 @@ class GameARViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
 
         guard let location = touches.first?.location(in: sceneView) else { return }
 
         let hitNodes = sceneView.hitTest(location, options: nil)
         
         self.gameARManager.didTapIn(node: hitNodes.first?.node)
-        
-        if let hitNode = hitNodes.first {
-            //self.gameARManager.didTapIn(node: hitNode.node)
-//            print("node: \(hitNode.node.name)") // pyramid
-//
-//            print("node: \(hitNode.node.parent?.name)") // tree
-//
-//            print("node: \(hitNode.node.parent?.parent?.name)") // reference node
-            
-            //self.addFire(node: hitNode.node.parent!)
-        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

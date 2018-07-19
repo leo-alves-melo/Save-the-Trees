@@ -22,13 +22,14 @@ class GameARManager: NSObject {
     private var cloud: SCNNode!
     private var invisiBall: SCNNode!
     private let boardWidth = 2
-    private let boardHeight = 1
+    private let boardHeight = 2
     private var treesBoard: GameBoard<Tree<SCNNode>?>!
     private var timerBall = Timer()
     private var timerIterate = Timer()
     private var timeToKillTree = 4
-    private var timeToKillFire = 2
-    private var numberOfIterations = 60
+    private var timeToKillFire = 4
+    private var numberOfIterations = 30
+    private var treesInitiallyWithFire = 3
     var gameAdded = false
     
     
@@ -42,6 +43,8 @@ class GameARManager: NSObject {
         self.createInvisiBall()
         
         self.delegate?.sceneView.scene.physicsWorld.contactDelegate = self
+        
+        self.timerIterate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.iterate), userInfo: nil, repeats: true)
     
     }
     
@@ -76,7 +79,8 @@ class GameARManager: NSObject {
     
     func startGame() {
         self.instantiateTrees()
-        self.timerIterate = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.iterate), userInfo: nil, repeats: true)
+        
+
     }
     
     func didTapIn(node: SCNNode?) {
@@ -90,7 +94,10 @@ class GameARManager: NSObject {
     }
     
     @objc private func iterate() {
-        print("Iterando")
+        
+        if !self.gameAdded {
+            return
+        }
         
         var treesWithoutFire:[(Int,Int)] = []
 
