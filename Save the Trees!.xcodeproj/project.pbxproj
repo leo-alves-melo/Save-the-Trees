@@ -31,6 +31,9 @@
 		8B749ECF20C6FF7E00B13A42 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B749ED120C6FF7E00B13A42 /* Localizable.strings */; };
 		8B7E0FCC20D01E6C00382115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E0FCE20D01E6C00382115 /* InfoPlist.strings */; };
 		8B84F4A6208E64A80063CEF9 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84F4A5208E64A80063CEF9 /* GameBoard.swift */; };
+		8B96A2612101011200B2AD62 /* cloudTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A2602101011200B2AD62 /* cloudTexture.png */; };
+		8B96A2632101043A00B2AD62 /* grassTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A2622101043A00B2AD62 /* grassTexture.jpg */; };
+		8B96A26521010D6300B2AD62 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96A26421010D6300B2AD62 /* Tree.swift */; };
 		8BA07A2620692585005E3119 /* Chainsaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA07A2120692584005E3119 /* Chainsaw.swift */; };
 		8BA07A2720692585005E3119 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA07A2220692584005E3119 /* Constants.swift */; };
 		8BA07A2820692585005E3119 /* Danger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA07A2320692584005E3119 /* Danger.swift */; };
@@ -66,6 +69,9 @@
 		8B749ED020C6FF7E00B13A42 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8B7E0FCD20D01E6C00382115 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8B84F4A5208E64A80063CEF9 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		8B96A2602101011200B2AD62 /* cloudTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudTexture.png; sourceTree = "<group>"; };
+		8B96A2622101043A00B2AD62 /* grassTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grassTexture.jpg; sourceTree = "<group>"; };
+		8B96A26421010D6300B2AD62 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		8BA07A2120692584005E3119 /* Chainsaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chainsaw.swift; sourceTree = "<group>"; };
 		8BA07A2220692584005E3119 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BA07A2320692584005E3119 /* Danger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Danger.swift; sourceTree = "<group>"; };
@@ -186,9 +192,12 @@
 		8B45275B20FD0A290066FCA4 /* ModelAR */ = {
 			isa = PBXGroup;
 			children = (
+				8B96A2622101043A00B2AD62 /* grassTexture.jpg */,
+				8B96A2602101011200B2AD62 /* cloudTexture.png */,
 				8B45275C20FE5E960066FCA4 /* spark.png */,
 				8B45275D20FE5E960066FCA4 /* FireParticle.scnp */,
 				8B45276020FE66540066FCA4 /* RainParticle.scnp */,
+				8B96A26421010D6300B2AD62 /* Tree.swift */,
 			);
 			path = ModelAR;
 			sourceTree = "<group>";
@@ -260,9 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B96A2632101043A00B2AD62 /* grassTexture.jpg in Resources */,
 				8B10D69F205ACD1D00F9F009 /* LaunchScreen.storyboard in Resources */,
 				8B45275F20FE5E970066FCA4 /* FireParticle.scnp in Resources */,
 				8B45275E20FE5E970066FCA4 /* spark.png in Resources */,
+				8B96A2612101011200B2AD62 /* cloudTexture.png in Resources */,
 				8B20791220F913B0009809E2 /* art.scnassets in Resources */,
 				8B10D6BE205AF32D00F9F009 /* Game.storyboard in Resources */,
 				8B10D6AF205AE70900F9F009 /* Finalization.storyboard in Resources */,
@@ -294,6 +305,7 @@
 				8B10D6B8205AF0F500F9F009 /* GameViewController.swift in Sources */,
 				8BA07A2A20692585005E3119 /* Flame.swift in Sources */,
 				8B20791420F913FF009809E2 /* GameARScene.swift in Sources */,
+				8B96A26521010D6300B2AD62 /* Tree.swift in Sources */,
 				8BA07A2920692585005E3119 /* DirectionEnum.swift in Sources */,
 				8B45276320FF86580066FCA4 /* GameARManager.swift in Sources */,
 				8B10D6BC205AF25F00F9F009 /* GameScene.swift in Sources */,

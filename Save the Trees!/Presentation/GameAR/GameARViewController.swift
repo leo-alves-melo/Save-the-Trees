@@ -105,8 +105,10 @@ extension GameARViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let anchor = anchor as? ARPlaneAnchor {
             
-            self.gameARManager.putGameIn(anchor: anchor)
-            
+            if !self.gameARManager.gameAdded {
+                self.gameARManager.putGameIn(anchor: anchor)
+                self.gameARManager.startGame()
+            }
         }
     }
 }
