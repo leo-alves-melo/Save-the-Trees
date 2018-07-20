@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5y-Br-7u2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TutorialAR View Controller-->
+        <scene sceneID="pTt-vq-kpq">
+            <objects>
+                <viewController id="P5y-Br-7u2" customClass="TutorialARViewController" customModule="Save_the_Trees_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hqb-aa-aWr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundTexture-1" translatesAutoresizingMaskIntoConstraints="NO" id="gAZ-dn-e1F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBP-V5-gDX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="P5y-Br-7u2" id="uO0-Fl-lnP"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cea-aj-nWl" userLabel="Play">
+                                <rect key="frame" x="272.5" y="564.5" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cea-aj-nWl" secondAttribute="height" multiplier="1:1" id="k6E-xU-9vJ"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <segue destination="uXI-zH-R6I" kind="show" id="Uzn-Ld-jvT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-4H-hbN" userLabel="Next">
+                                <rect key="frame" x="280" y="572" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ueX-4H-hbN" secondAttribute="height" multiplier="1:1" id="jFB-nS-DYn"/>
+                                </constraints>
+                                <state key="normal" image="botão next"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="P5y-Br-7u2" eventType="touchUpInside" id="mxg-6P-PbO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-OG-4tr" userLabel="Back">
+                                <rect key="frame" x="20" y="572" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gcO-OG-4tr" secondAttribute="height" multiplier="1:1" id="Npm-6l-0sb"/>
+                                </constraints>
+                                <state key="normal" image="botão back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="P5y-Br-7u2" eventType="touchUpInside" id="SYq-hv-aDh"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-zw-gLQ">
+                                <rect key="frame" x="168" y="591" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lGx-Em-0gm" firstAttribute="bottom" secondItem="gAZ-dn-e1F" secondAttribute="bottom" id="5pk-Kl-bQG"/>
+                            <constraint firstItem="ueX-4H-hbN" firstAttribute="width" secondItem="gcO-OG-4tr" secondAttribute="width" id="Cdb-VU-lo3"/>
+                            <constraint firstItem="gAZ-dn-e1F" firstAttribute="top" secondItem="Hqb-aa-aWr" secondAttribute="top" id="DhG-Eq-kbt"/>
+                            <constraint firstItem="MBP-V5-gDX" firstAttribute="height" secondItem="Hqb-aa-aWr" secondAttribute="height" id="HKR-Zc-lqy"/>
+                            <constraint firstItem="cea-aj-nWl" firstAttribute="centerY" secondItem="ueX-4H-hbN" secondAttribute="centerY" id="Iab-a7-Twl"/>
+                            <constraint firstItem="MBP-V5-gDX" firstAttribute="leading" secondItem="lGx-Em-0gm" secondAttribute="leading" id="Jcp-e6-CeO"/>
+                            <constraint firstItem="b5E-zw-gLQ" firstAttribute="centerY" secondItem="gcO-OG-4tr" secondAttribute="centerY" id="Tyl-Ic-Huh"/>
+                            <constraint firstItem="lGx-Em-0gm" firstAttribute="trailing" secondItem="MBP-V5-gDX" secondAttribute="trailing" id="WOn-nj-qqp"/>
+                            <constraint firstItem="cea-aj-nWl" firstAttribute="centerX" secondItem="ueX-4H-hbN" secondAttribute="centerX" id="ccD-P5-2y3"/>
+                            <constraint firstItem="lGx-Em-0gm" firstAttribute="trailing" secondItem="ueX-4H-hbN" secondAttribute="trailing" constant="20" id="fop-Fz-W20"/>
+                            <constraint firstItem="gcO-OG-4tr" firstAttribute="width" secondItem="Hqb-aa-aWr" secondAttribute="width" multiplier="0.2" id="gBA-zP-laE"/>
+                            <constraint firstItem="gcO-OG-4tr" firstAttribute="leading" secondItem="lGx-Em-0gm" secondAttribute="leading" constant="20" id="k6T-dG-IJ1"/>
+                            <constraint firstItem="ueX-4H-hbN" firstAttribute="centerY" secondItem="gcO-OG-4tr" secondAttribute="centerY" id="nlX-UL-fP8"/>
+                            <constraint firstItem="gAZ-dn-e1F" firstAttribute="leading" secondItem="lGx-Em-0gm" secondAttribute="leading" id="o3d-Ai-8E4"/>
+                            <constraint firstItem="lGx-Em-0gm" firstAttribute="bottom" secondItem="MBP-V5-gDX" secondAttribute="bottom" id="qTz-El-J6D"/>
+                            <constraint firstItem="cea-aj-nWl" firstAttribute="width" secondItem="ueX-4H-hbN" secondAttribute="width" multiplier="1.2" id="wH8-Ni-t48"/>
+                            <constraint firstItem="lGx-Em-0gm" firstAttribute="bottom" secondItem="gcO-OG-4tr" secondAttribute="bottom" constant="20" id="xcf-jr-v2Q"/>
+                            <constraint firstItem="lGx-Em-0gm" firstAttribute="trailing" secondItem="gAZ-dn-e1F" secondAttribute="trailing" id="xt6-L8-TbO"/>
+                            <constraint firstItem="b5E-zw-gLQ" firstAttribute="centerX" secondItem="lGx-Em-0gm" secondAttribute="centerX" id="yfB-wp-tuc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lGx-Em-0gm"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="gcO-OG-4tr" id="QyI-TN-Hlx"/>
+                        <outlet property="nextButton" destination="ueX-4H-hbN" id="1Vn-zj-6Qc"/>
+                        <outlet property="pageControl" destination="b5E-zw-gLQ" id="o3g-Dn-ApK"/>
+                        <outlet property="playButton" destination="cea-aj-nWl" id="u4x-6f-PJ5"/>
+                        <outlet property="scrollView" destination="MBP-V5-gDX" id="RWt-8N-5t4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eM0-VH-vdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="182" y="138"/>
+        </scene>
+        <!--GameAR-->
+        <scene sceneID="wwe-Vu-GgD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameAR" id="uXI-zH-R6I" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jW1-1Y-RIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundTexture-1" width="227" height="227"/>
+        <image name="botão back" width="123" height="123"/>
+        <image name="botão next" width="123" height="123"/>
+        <image name="play" width="253" height="253"/>
+    </resources>
+</document>

@@ -33,8 +33,10 @@
 		8B96A2612101011200B2AD62 /* cloudTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A2602101011200B2AD62 /* cloudTexture.png */; };
 		8B96A2632101043A00B2AD62 /* grassTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A2622101043A00B2AD62 /* grassTexture.jpg */; };
 		8B96A26521010D6300B2AD62 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96A26421010D6300B2AD62 /* Tree.swift */; };
-		8B96A26821013BCD00B2AD62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A26721013BCD00B2AD62 /* Main.storyboard */; };
 		8B96A26A21013C3600B2AD62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96A26921013C3600B2AD62 /* MainViewController.swift */; };
+		8B96A26D21023BA500B2AD62 /* TutorialAR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A26C21023BA500B2AD62 /* TutorialAR.storyboard */; };
+		8B96A26F21023BD600B2AD62 /* TutorialARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96A26E21023BD600B2AD62 /* TutorialARViewController.swift */; };
+		8B96A27021023EAC00B2AD62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A27221023EAC00B2AD62 /* Main.storyboard */; };
 		8BA07A2620692585005E3119 /* Chainsaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA07A2120692584005E3119 /* Chainsaw.swift */; };
 		8BA07A2720692585005E3119 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA07A2220692584005E3119 /* Constants.swift */; };
 		8BA07A2820692585005E3119 /* Danger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA07A2320692584005E3119 /* Danger.swift */; };
@@ -72,8 +74,11 @@
 		8B96A2602101011200B2AD62 /* cloudTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudTexture.png; sourceTree = "<group>"; };
 		8B96A2622101043A00B2AD62 /* grassTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grassTexture.jpg; sourceTree = "<group>"; };
 		8B96A26421010D6300B2AD62 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
-		8B96A26721013BCD00B2AD62 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8B96A26921013C3600B2AD62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8B96A26C21023BA500B2AD62 /* TutorialAR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialAR.storyboard; sourceTree = "<group>"; };
+		8B96A26E21023BD600B2AD62 /* TutorialARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialARViewController.swift; sourceTree = "<group>"; };
+		8B96A27121023EAC00B2AD62 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "pt-BR"; path = "pt-BR.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		8B96A27321023EB600B2AD62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BA07A2120692584005E3119 /* Chainsaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chainsaw.swift; sourceTree = "<group>"; };
 		8BA07A2220692584005E3119 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BA07A2320692584005E3119 /* Danger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Danger.swift; sourceTree = "<group>"; };
@@ -129,6 +134,7 @@
 		8B10D6A6205ACD2600F9F009 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8B96A26B21023B8700B2AD62 /* TutorialAR */,
 				8B96A26621013BB100B2AD62 /* Main */,
 				8B20790C20F90679009809E2 /* GameAR */,
 				8B10D6AD205AE6F300F9F009 /* Finalization */,
@@ -215,10 +221,19 @@
 		8B96A26621013BB100B2AD62 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8B96A26721013BCD00B2AD62 /* Main.storyboard */,
+				8B96A27221023EAC00B2AD62 /* Main.storyboard */,
 				8B96A26921013C3600B2AD62 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8B96A26B21023B8700B2AD62 /* TutorialAR */ = {
+			isa = PBXGroup;
+			children = (
+				8B96A26C21023BA500B2AD62 /* TutorialAR.storyboard */,
+				8B96A26E21023BD600B2AD62 /* TutorialARViewController.swift */,
+			);
+			path = TutorialAR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +301,8 @@
 				8B45275E20FE5E970066FCA4 /* spark.png in Resources */,
 				8B96A2612101011200B2AD62 /* cloudTexture.png in Resources */,
 				8B20791220F913B0009809E2 /* art.scnassets in Resources */,
-				8B96A26821013BCD00B2AD62 /* Main.storyboard in Resources */,
+				8B96A27021023EAC00B2AD62 /* Main.storyboard in Resources */,
+				8B96A26D21023BA500B2AD62 /* TutorialAR.storyboard in Resources */,
 				8B10D6BE205AF32D00F9F009 /* Game.storyboard in Resources */,
 				8B10D6AF205AE70900F9F009 /* Finalization.storyboard in Resources */,
 				8B52C1D220A083A700A38138 /* LICENSE.license in Resources */,
@@ -307,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B96A26F21023BD600B2AD62 /* TutorialARViewController.swift in Sources */,
 				8B10D6B3205AE87E00F9F009 /* FinalizationViewcontroller.swift in Sources */,
 				8BA07A2820692585005E3119 /* Danger.swift in Sources */,
 				8B10D6AB205ACD6000F9F009 /* Tutorial.swift in Sources */,
@@ -352,6 +369,15 @@
 				8B7E0FCD20D01E6C00382115 /* pt-BR */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8B96A27221023EAC00B2AD62 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B96A27121023EAC00B2AD62 /* pt-BR */,
+				8B96A27321023EB600B2AD62 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -31,6 +31,7 @@ class GameARManager: NSObject {
     private var numberOfIterations = 30
     private var treesInitiallyWithFire = 3
     var gameAdded = false
+    var gameStarted = false
     
     
     init(delegate: GameARManagerDelegate) {
@@ -39,12 +40,12 @@ class GameARManager: NSObject {
         self.delegate = delegate
         
         
-        self.createCloud()
+        
         self.createInvisiBall()
         
         self.delegate?.sceneView.scene.physicsWorld.contactDelegate = self
         
-        self.timerIterate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.iterate), userInfo: nil, repeats: true)
+        
     
     }
     
@@ -59,6 +60,9 @@ class GameARManager: NSObject {
         self.delegate?.sceneView.scene.rootNode.addChildNode(node)
         
         self.gameAdded = true
+        
+        self.createCloud()
+        self.instantiateTrees()
     }
     
     func putPlaneIn(anchor: ARPlaneAnchor, node: SCNNode) {
@@ -78,8 +82,8 @@ class GameARManager: NSObject {
     }
     
     func startGame() {
-        self.instantiateTrees()
-        
+        self.timerIterate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.iterate), userInfo: nil, repeats: true)
+        self.gameStarted = true
 
     }
     
@@ -95,7 +99,7 @@ class GameARManager: NSObject {
     
     @objc private func iterate() {
         
-        if !self.gameAdded {
+        if !self.gameAdded || self.treesBoard == nil {
             return
         }
         
@@ -227,8 +231,6 @@ class GameARManager: NSObject {
         }
         
         self.cloud.addChildNode(self.invisiBall)
-        
-        //self.iterate()
 
     }
     

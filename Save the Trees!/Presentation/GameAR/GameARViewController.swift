@@ -8,18 +8,26 @@
 
 import UIKit
 import ARKit
+import AudioToolbox
 
 class GameARViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var informationView: UIView!
+    @IBOutlet weak var informationLabel: UILabel!
     
     var savedTreesPercentage = 0
     
     var gameARManager: GameARManager!
     
+    var gamePlane: ARPlaneAnchor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.gameARManager = GameARManager(delegate: self)
+        self.informationView.layer.cornerRadius = 10
+        self.informationView.layer.masksToBounds = true
+        
    
     }
     
@@ -32,13 +40,32 @@ class GameARViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        guard let location = touches.first?.location(in: sceneView) else { return }
-
-        let hitNodes = sceneView.hitTest(location, options: nil)
         
-        self.gameARManager.didTapIn(node: hitNodes.first?.node)
+        if self.gamePlane != nil {
+            
+            if self.gameARManager.gameAdded {
+                
+                if self.gameARManager.gameStarted {
+                    guard let location = touches.first?.location(in: sceneView) else { return }
+                    
+                    let hitNodes = sceneView.hitTest(location, options: nil)
+                    
+                    self.gameARManager.didTapIn(node: hitNodes.first?.node)
+                }
+                else {
+                    self.startGame()
+                }
 
+            }
+            else {
+                self.addGame()
+            }
+            
+            
+            
+        }
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +88,8 @@ class GameARViewController: UIViewController {
         
         // Start a new session
         self.startNewSession()
+        
+        self.showInformation(information: NSLocalizedString("Move your camera until I get a plane", comment: "Move your camera until I get a plane"))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,6 +105,27 @@ class GameARViewController: UIViewController {
         }
     }
     
+    func showInformation(information: String) {
+        self.informationLabel.text = information
+        
+        self.hideInformation()
+        
+        UIView.animate(withDuration: 1.5, animations: {
+            self.informationView.alpha = 0.7
+        }) { (ok) in
+
+        }
+
+    }
+    
+    func hideInformation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.informationView.alpha = 0.0
+        }) { (ok) in
+            
+        }
+    }
+    
     func startNewSession() {
         
         sceneView.showsStatistics = true
@@ -88,15 +138,31 @@ class GameARViewController: UIViewController {
         // Run the view's session
         sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
     }
+    
+    func addGame() {
+        self.gameARManager.putGameIn(anchor: self.gamePlane!)
+        self.showInformation(information: NSLocalizedString("The Game has been added! Tap to start it.", comment: "The Game has been added! Tap to start it."))
+    }
+    
+    func startGame() {
+        self.gameARManager.startGame()
+        self.hideInformation()
+    }
 }
 
 extension GameARViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let anchor = anchor as? ARPlaneAnchor {
             
+            
+            
             if !self.gameARManager.gameAdded {
-                self.gameARManager.putGameIn(anchor: anchor)
-                self.gameARManager.startGame()
+                self.gamePlane = anchor
+            }
+            
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                self.showInformation(information: NSLocalizedString("I found a plane! Tap to add the Game.", comment: "I found a plane! Tap to add the Game."))
             }
         }
     }

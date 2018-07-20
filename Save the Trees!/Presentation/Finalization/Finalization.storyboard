@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -108,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="-49" y="-62"/>
         </scene>
-        <!--Tutorial-->
+        <!--Main-->
         <scene sceneID="Wqq-fX-dBk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tutorial" id="ndZ-Hb-fim" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="ndZ-Hb-fim" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUA-sm-ScP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="764" y="-62"/>

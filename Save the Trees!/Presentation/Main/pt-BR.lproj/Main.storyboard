@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQh-JZ-IfK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="IUJ-z0-x2M">
+            <objects>
+                <viewController id="nQh-JZ-IfK" customClass="MainViewController" customModule="Save_the_Trees_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ewJ-AW-bGO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundTexture-1" translatesAutoresizingMaskIntoConstraints="NO" id="wRm-eE-Ni2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha o modo de jogo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVO-yI-3Uf">
+                                <rect key="frame" x="10" y="224.5" width="355" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWE-cK-N9g">
+                                <rect key="frame" x="31" y="287.5" width="112.5" height="112.5"/>
+                                <state key="normal" image="2DButton"/>
+                                <connections>
+                                    <segue destination="rlE-FV-mmt" kind="show" id="GnL-aR-VJg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ0-5M-TXh">
+                                <rect key="frame" x="220.5" y="287.5" width="112.5" height="112.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KQ0-5M-TXh" secondAttribute="height" multiplier="1:1" id="jAg-0B-Kt3"/>
+                                </constraints>
+                                <state key="normal" image="ARButton"/>
+                                <connections>
+                                    <segue destination="PB0-qF-Vd6" kind="show" id="Ehf-Qv-PxY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clássico jogo em 2D" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM0-of-w2s">
+                                <rect key="frame" x="31" y="410" width="112.5" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novo jogo em Realidade Aumentada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfa-Cf-NS1">
+                                <rect key="frame" x="221" y="410" width="112.5" height="61"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wRm-eE-Ni2" firstAttribute="leading" secondItem="v79-6x-Cj0" secondAttribute="leading" id="8Gn-oG-248"/>
+                            <constraint firstItem="KQ0-5M-TXh" firstAttribute="height" secondItem="fWE-cK-N9g" secondAttribute="height" id="99X-ce-eSx"/>
+                            <constraint firstItem="fWE-cK-N9g" firstAttribute="top" secondItem="YVO-yI-3Uf" secondAttribute="bottom" constant="30" id="9kf-Kh-PCH"/>
+                            <constraint firstItem="Zfa-Cf-NS1" firstAttribute="width" secondItem="KQ0-5M-TXh" secondAttribute="width" id="BCb-aW-6jC"/>
+                            <constraint firstItem="fWE-cK-N9g" firstAttribute="centerY" secondItem="v79-6x-Cj0" secondAttribute="centerY" id="FBv-lD-mh4"/>
+                            <constraint firstItem="v79-6x-Cj0" firstAttribute="trailing" secondItem="KQ0-5M-TXh" secondAttribute="trailing" constant="42" id="SUT-oz-sUf"/>
+                            <constraint firstItem="KQ0-5M-TXh" firstAttribute="width" secondItem="ewJ-AW-bGO" secondAttribute="width" multiplier="0.3" id="SvS-Vk-1Tr"/>
+                            <constraint firstItem="rM0-of-w2s" firstAttribute="centerX" secondItem="fWE-cK-N9g" secondAttribute="centerX" id="UmV-Ua-A0I"/>
+                            <constraint firstItem="v79-6x-Cj0" firstAttribute="trailing" secondItem="YVO-yI-3Uf" secondAttribute="trailing" constant="10" id="WEU-kv-DgK"/>
+                            <constraint firstItem="Zfa-Cf-NS1" firstAttribute="top" secondItem="KQ0-5M-TXh" secondAttribute="bottom" constant="10" id="XRb-19-gNT"/>
+                            <constraint firstItem="v79-6x-Cj0" firstAttribute="bottom" secondItem="wRm-eE-Ni2" secondAttribute="bottom" id="YZ2-aJ-mbR"/>
+                            <constraint firstItem="YVO-yI-3Uf" firstAttribute="leading" secondItem="v79-6x-Cj0" secondAttribute="leading" constant="10" id="Zst-bc-3bj"/>
+                            <constraint firstItem="rM0-of-w2s" firstAttribute="top" secondItem="fWE-cK-N9g" secondAttribute="bottom" constant="10" id="agF-7w-DgX"/>
+                            <constraint firstItem="v79-6x-Cj0" firstAttribute="bottom" secondItem="wRm-eE-Ni2" secondAttribute="bottom" id="dpw-j3-SQd"/>
+                            <constraint firstItem="KQ0-5M-TXh" firstAttribute="centerY" secondItem="v79-6x-Cj0" secondAttribute="centerY" id="dyU-kj-gKf"/>
+                            <constraint firstItem="KQ0-5M-TXh" firstAttribute="width" secondItem="fWE-cK-N9g" secondAttribute="width" id="jx1-gL-5v1"/>
+                            <constraint firstItem="fWE-cK-N9g" firstAttribute="leading" secondItem="v79-6x-Cj0" secondAttribute="leading" constant="31" id="lMz-tV-NAy"/>
+                            <constraint firstItem="Zfa-Cf-NS1" firstAttribute="centerX" secondItem="KQ0-5M-TXh" secondAttribute="centerX" id="lWO-OR-CTr"/>
+                            <constraint firstItem="rM0-of-w2s" firstAttribute="width" secondItem="fWE-cK-N9g" secondAttribute="width" id="sbV-UG-ryf"/>
+                            <constraint firstItem="v79-6x-Cj0" firstAttribute="trailing" secondItem="wRm-eE-Ni2" secondAttribute="trailing" id="vk8-JZ-iqx"/>
+                            <constraint firstItem="wRm-eE-Ni2" firstAttribute="top" secondItem="ewJ-AW-bGO" secondAttribute="top" id="zOz-et-2tK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v79-6x-Cj0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91Z-XS-ndM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551.20000000000005" y="150.67466266866569"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="H0C-4i-8tU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tutorial" id="rlE-FV-mmt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7nq-V7-SZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="16"/>
+        </scene>
+        <!--TutorialAR-->
+        <scene sceneID="vtb-bX-bOe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TutorialAR" id="PB0-qF-Vd6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRF-nR-BFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="263"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="2DButton" width="123" height="123"/>
+        <image name="ARButton" width="123" height="123"/>
+        <image name="backgroundTexture-1" width="227" height="227"/>
+    </resources>
+</document>
